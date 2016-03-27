@@ -76,7 +76,7 @@
   </notepads>
   <order>
   <hop> <from>read xml</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>
-  <hop> <from>Row Normaliser</from><to>temporary output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Row Normaliser</from><to>output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Row Normaliser</name>
@@ -154,7 +154,7 @@
     </step>
 
   <step>
-    <name>temporary output</name>
+    <name>output</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>

@@ -10,18 +10,18 @@
     <directory>&#x2f;</directory>
     <parameters>
         <parameter>
-            <name>formID</name>
-            <default_value>asdf123</default_value>
+            <name>file_path</name>
+            <default_value>C&#x3a;&#x2f;Users&#x2f;churtado&#x2f;Documents&#x2f;GitHub&#x2f;metadata_injection&#x2f;input</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>name</name>
-            <default_value>aDF</default_value>
+            <name>file_regex</name>
+            <default_value>file1.xml</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>uuid</name>
-            <default_value>123</default_value>
+            <name>xml_loop_path</name>
+            <default_value>&#x2f;data</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -91,13 +91,13 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>type &#x3d; string</from><to>read xml</to><enabled>N</enabled> </hop>
+  <hop> <from>type &#x3d; string</from><to>read xml</to><enabled>Y</enabled> </hop>
   <hop> <from>XML Input Stream &#x28;StAX&#x29;</from><to>only starts and fields</to><enabled>Y</enabled> </hop>
   <hop> <from>only starts and fields</from><to>only fields and paths</to><enabled>Y</enabled> </hop>
-  <hop> <from>get variables</from><to>read xml</to><enabled>N</enabled> </hop>
+  <hop> <from>get variables</from><to>read xml</to><enabled>Y</enabled> </hop>
   <hop> <from>one row</from><to>get variables</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>Normalised field</to><enabled>Y</enabled> </hop>
-  <hop> <from>Normalised field</from><to>read xml</to><enabled>N</enabled> </hop>
+  <hop> <from>Normalised field</from><to>read xml</to><enabled>Y</enabled> </hop>
   <hop> <from>only fields and paths</from><to>Select values</to><enabled>Y</enabled> </hop>
   <hop> <from>only fields and paths</from><to>type &#x3d; string</to><enabled>Y</enabled> </hop>
   </order>
@@ -169,7 +169,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;churtado&#x5c;Desktop&#x5c;0.2&#x5c;input&#x5c;file1.xml</filename>
+    <filename>&#x24;&#x7b;file_path&#x7d;&#x2f;&#x24;&#x7b;file_regex&#x7d;</filename>
     <addResultFile>N</addResultFile>
     <nrRowsToSkip>0</nrRowsToSkip>
     <rowLimit>0</rowLimit>
@@ -225,7 +225,7 @@
     <fields>
       <field>
         <name>file_path</name>
-        <variable>&#x24;&#x7b;temp&#x7d;</variable>
+        <variable>&#x24;&#x7b;file_path&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -237,7 +237,7 @@
       </field>
       <field>
         <name>xml_loop_path</name>
-        <variable>&#x24;&#x7b;rootNode&#x7d;</variable>
+        <variable>&#x24;&#x7b;xml_loop_path&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -249,7 +249,7 @@
       </field>
       <field>
         <name>file_regex</name>
-        <variable>&#x24;&#x7b;fileRegex&#x7d;</variable>
+        <variable>&#x24;&#x7b;file_regex&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -377,7 +377,7 @@
     <specification_method>filename</specification_method>
     <trans_object_id/>
     <trans_name/>
-    <filename>&#x2f;&#x2f;&#x2f;C&#x3a;&#x2f;Users&#x2f;churtado&#x2f;Desktop&#x2f;el_foro&#x2f;0.2&#x2f;read_xml_file.ktr</filename>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;read_xml_file.ktr</filename>
     <directory_path/>
     <source_step/>
     <source_output_fields>    </source_output_fields>    <target_file>injected.ktr</target_file>
